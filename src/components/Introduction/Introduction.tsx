@@ -2,7 +2,7 @@ import './Introduction.css'
 
 export function Introduction() {
   return (
-    <section className="introduction">
+    <section id="course-intro" className="introduction">
       <div className="intro-content">
         <h2 className="intro-title">课程简介</h2>
         <p className="intro-text">
