@@ -56,7 +56,7 @@ export const navigationData: NavigationData = {
  * Convert navigation data to NavItem array for the Navigation component
  */
 export function getNavItems(): NavItem[] {
-  return navigationData.parts.map((part) => ({
+  const mainNavItems = navigationData.parts.map((part) => ({
     id: part.id,
     label: part.title,
     href: `#${part.id}`,
@@ -66,18 +66,35 @@ export function getNavItems(): NavItem[] {
       href: `#${part.id}-${cat.id}`,
     })),
   }))
+
+  // Course introduction at the beginning
+  const courseIntro: NavItem = {
+    id: 'course-intro',
+    label: '课程介绍',
+    href: '#course-intro',
+  }
+
+  // Appendix index at the end
+  const appendixIndex: NavItem = {
+    id: 'appendix',
+    label: '附录索引',
+    href: '#appendix',
+  }
+
+  return [courseIntro, ...mainNavItems, appendixIndex]
 }
 
 /**
  * Get all section IDs for scroll tracking
  */
 export function getAllSectionIds(): string[] {
-  const ids: string[] = []
+  const ids: string[] = ['course-intro']
   navigationData.parts.forEach((part) => {
     ids.push(part.id)
     part.categories.forEach((cat) => {
       ids.push(`${part.id}-${cat.id}`)
     })
   })
+  ids.push('appendix')
   return ids
 }

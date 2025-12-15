@@ -8,6 +8,7 @@ import {
   BackToTop,
   Appendix,
 } from './components'
+import { CourseIntro } from './components/CourseIntro/CourseIntro'
 import { chunks, getNavItems, navigationData, getAllSectionIds } from './data'
 import { useSearch, useActiveSection } from './hooks'
 import { filterChunks } from './utils'
@@ -45,6 +46,8 @@ function App() {
       <Navigation items={navItems} activeSection={activeSection} />
 
       <main className="main-content">
+        {!searchTerm && <CourseIntro />}
+        
         <div className="container">
           <SearchBox value={searchTerm} onChange={setSearchTerm} />
 

@@ -79,12 +79,175 @@
   color: var(--color-text);
 }
 
+.appendix-conclusion {
+  margin-top: var(--space-2xl);
+}
+
+.conclusion-card {
+  background: linear-gradient(135deg, #fef7cd 0%, #fbbf24 100%);
+  padding: var(--space-2xl);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-xl);
+  border: 2px solid #f59e0b;
+  text-align: center;
+}
+
+.conclusion-title {
+  color: #92400e;
+  font-size: var(--font-size-2xl);
+  font-weight: 700;
+  margin-bottom: var(--space-lg);
+}
+
+.conclusion-content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.conclusion-motto {
+  font-size: var(--font-size-xl);
+  color: #92400e;
+  margin-bottom: var(--space-lg);
+  font-style: italic;
+}
+
+.conclusion-motto strong {
+  font-weight: 700;
+}
+
+.conclusion-text {
+  color: #78350f;
+  font-size: var(--font-size-lg);
+  line-height: 1.7;
+  margin-bottom: var(--space-md);
+  text-align: left;
+}
+
+.conclusion-signature {
+  color: #92400e;
+  font-size: var(--font-size-lg);
+  font-weight: 600;
+  margin-top: var(--space-lg);
+  font-style: italic;
+}
+
 @media (max-width: 768px) {
   .appendix {
     padding: var(--space-lg);
+    margin-top: var(--space-lg);
+  }
+
+  .appendix-title {
+    font-size: var(--font-size-xl);
+  }
+
+  .appendix-description {
+    font-size: var(--font-size-base);
+    padding: 0 var(--space-sm);
   }
 
   .alphabet-index {
     grid-template-columns: 1fr;
+    gap: var(--space-md);
+  }
+
+  .letter-group {
+    padding: var(--space-sm);
+  }
+
+  .letter-heading {
+    font-size: var(--font-size-xl);
+  }
+
+  .index-item {
+    padding: var(--space-sm);
+    font-size: var(--font-size-base);
+  }
+
+  .index-number {
+    min-width: 32px;
+    font-size: var(--font-size-sm);
+  }
+
+  .index-title {
+    font-size: var(--font-size-sm);
+  }
+
+  .conclusion-card {
+    padding: var(--space-lg);
+  }
+
+  .conclusion-title {
+    font-size: var(--font-size-xl);
+  }
+
+  .conclusion-motto {
+    font-size: var(--font-size-lg);
+  }
+
+  .conclusion-text {
+    font-size: var(--font-size-base);
+    text-align: center;
+  }
+
+  .conclusion-signature {
+    font-size: var(--font-size-base);
+  }
+}
+
+@media (max-width: 480px) {
+  .appendix {
+    padding: var(--space-md);
+    border-radius: var(--radius-lg);
+  }
+
+  .appendix-title {
+    font-size: var(--font-size-lg);
+  }
+
+  .appendix-description {
+    font-size: var(--font-size-sm);
+  }
+
+  .letter-group {
+    padding: var(--space-xs);
+  }
+
+  .letter-heading {
+    font-size: var(--font-size-lg);
+  }
+
+  .index-item {
+    padding: var(--space-xs) var(--space-sm);
+    font-size: var(--font-size-sm);
+  }
+
+  .index-number {
+    min-width: 28px;
+    font-size: var(--font-size-xs);
+  }
+
+  .index-title {
+    font-size: var(--font-size-xs);
+  }
+
+  .conclusion-card {
+    padding: var(--space-md);
+  }
+
+  .conclusion-title {
+    font-size: var(--font-size-lg);
+  }
+
+  .conclusion-motto {
+    font-size: var(--font-size-base);
+  }
+
+  .conclusion-text {
+    font-size: var(--font-size-sm);
+  }
+
+  .conclusion-signature {
+    font-size: var(--font-size-sm);
   }
 }

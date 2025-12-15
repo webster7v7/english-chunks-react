@@ -5,25 +5,27 @@ interface DropdownMenuProps {
   item: NavItem
   isActive: boolean
   onNavClick: (e: React.MouseEvent<HTMLAnchorElement>, href: string) => void
+  isMobile?: boolean
 }
 
-export function DropdownMenu({ item, isActive, onNavClick }: DropdownMenuProps) {
+export function DropdownMenu({ item, isActive, onNavClick, isMobile = false }: DropdownMenuProps) {
   const [isOpen, setIsOpen] = useState(false)
 
   const handleMouseEnter = () => {
-    if (window.innerWidth > 768) {
+    if (!isMobile) {
       setIsOpen(true)
     }
   }
   
   const handleMouseLeave = () => {
-    if (window.innerWidth > 768) {
+    if (!isMobile) {
       setIsOpen(false)
     }
   }
 
-  const handleClick = () => {
-    if (window.innerWidth <= 768) {
+  const handleClick = (e: React.MouseEvent) => {
+    e.preventDefault()
+    if (isMobile) {
       setIsOpen(!isOpen)
     }
   }
@@ -32,7 +34,7 @@ export function DropdownMenu({ item, isActive, onNavClick }: DropdownMenuProps) 
     return (
       <a
         href={item.href}
-        className={`nav-link ${isActive ? 'active' : ''}`}
+        className={`nav-link ${isActive ? 'active' : ''} ${isMobile ? 'mobile' : ''}`}
         onClick={(e) => onNavClick(e, item.href)}
       >
         {item.label}
@@ -42,12 +44,12 @@ export function DropdownMenu({ item, isActive, onNavClick }: DropdownMenuProps) 
 
   return (
     <div
-      className={`navbar-dropdown ${isOpen ? 'active' : ''}`}
+      className={`navbar-dropdown ${isOpen ? 'active' : ''} ${isMobile ? 'mobile' : ''}`}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
     >
       <button
-        className={`dropdown-trigger ${isActive ? 'active' : ''}`}
+        className={`dropdown-trigger ${isActive ? 'active' : ''} ${isMobile ? 'mobile' : ''}`}
         aria-expanded={isOpen}
         aria-haspopup="true"
         onClick={handleClick}
@@ -56,12 +58,12 @@ export function DropdownMenu({ item, isActive, onNavClick }: DropdownMenuProps) 
         <span className="dropdown-icon">▼</span>
       </button>
 
-      <div className={`dropdown-menu ${isOpen ? 'open' : ''}`}>
+      <div className={`dropdown-menu ${isOpen ? 'open' : ''} ${isMobile ? 'mobile' : ''}`}>
         {item.children.map((child) => (
           <a
             key={child.id}
             href={child.href}
-            className="dropdown-item"
+            className={`dropdown-item ${isMobile ? 'mobile' : ''}`}
             onClick={(e) => onNavClick(e, child.href)}
           >
             {child.label}

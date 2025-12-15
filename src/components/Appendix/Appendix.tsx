@@ -69,6 +69,28 @@ export function Appendix({ chunks }: AppendixProps) {
           </div>
         ))}
       </div>
+
+      <div className="appendix-conclusion">
+        <div className="conclusion-card">
+          <h2 className="conclusion-title">写在最后</h2>
+          <div className="conclusion-content">
+            <p className="conclusion-motto">
+              <strong>勤能补拙是良训，一分辛苦一分才</strong>
+            </p>
+            <p className="conclusion-text">
+              以上就是所有的"200个黄金语块"。但这只是第一步。语言是"用"出来的，不是"存"出来的。
+              不要让这本手册在你的收藏夹里吃灰。
+            </p>
+            <p className="conclusion-text">
+              在下一次英语对话、写作或邮件中，试着有意识地替换掉那些平淡的词汇，用上你刚刚学到的"黄金语块"。
+              你会发现，自信心会随着地道程度的提升而倍增。
+            </p>
+            <p className="conclusion-signature">
+              —— 英语兔团队
+            </p>
+          </div>
+        </div>
+      </div>
     </section>
   )
 }
