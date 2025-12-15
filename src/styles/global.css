@@ -1,0 +1,86 @@
+@import './variables.css';
+
+/* Modern CSS Reset */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-family-base);
+  line-height: 1.7;
+  color: var(--color-text);
+  background: linear-gradient(135deg, var(--color-background) 0%, #edf2f7 100%);
+  min-height: 100vh;
+  background-attachment: fixed;
+  font-size: var(--font-size-base);
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: var(--space-lg) var(--space-md);
+}
+
+/* Screen reader only utility */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Focus visible styles */
+:focus-visible {
+  outline: var(--focus-outline);
+  outline-offset: var(--focus-outline-offset);
+}
+
+/* Link reset */
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* Button reset */
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+/* List reset */
+ul, ol {
+  list-style: none;
+}
+
+/* Image reset */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Highlight for search results */
+.highlight {
+  background: linear-gradient(135deg, rgba(245, 158, 11, 0.3), rgba(249, 115, 22, 0.3));
+  padding: 0 2px;
+  border-radius: 2px;
+  font-weight: 600;
+}
